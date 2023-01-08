@@ -9,9 +9,10 @@
 - [x] stream
 - [x] filter
 - [ ] tag: delete
-- [ ] add past block
+- [ ] ~~add past block~~ time traveling
 - [ ] search
 - [ ] lazy load
+- [ ] insert image
 - [ ] ~~markdown~~
 
 ## credit

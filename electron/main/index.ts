@@ -10,7 +10,7 @@
 //
 process.env.DIST_ELECTRON = join(__dirname, '..')
 process.env.DIST = join(process.env.DIST_ELECTRON, '../dist')
-process.env.PUBLIC = app.isPackaged ? process.env.DIST : join(process.env.DIST_ELECTRON, '../public')
+process.env.PUBLIC = app.isPackaged ? process.resourcesPath : join(process.env.DIST_ELECTRON, '../public')
 
 import { app, BrowserWindow, shell, ipcMain } from 'electron'
 import { release } from 'os'
@@ -41,7 +41,7 @@ const indexHtml = join(process.env.DIST, 'index.html')
 async function createWindow() {
   win = new BrowserWindow({
     title: 'Main window',
-    icon: join(process.env.PUBLIC, 'favicon.ico'),
+    icon: join(process.env.PUBLIC, 'icon', 'favicon.ico'),
     webPreferences: {
       preload,
       // Warning: Enable nodeIntegration and disable contextIsolation is not secure in production

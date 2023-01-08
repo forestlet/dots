@@ -4,13 +4,17 @@
 {
   appId: "YourAppID",
   asar: true,
+  extraResources: {
+    from: "./public",
+    to: "./",
+  },
   directories: {
     output: "release/${version}",
   },
   files: ["dist-electron", "dist"],
   mac: {
     artifactName: "${productName}_${version}.${ext}",
-    "icon": "./stream-note.png",
+    icon: "./icon/stream-note.png",
     target: ["dmg"],
   },
   win: {
@@ -21,7 +25,7 @@
       },
     ],
     artifactName: "${productName}_${version}.${ext}",
-    "icon": "./stream-note.png",
+    icon: "./icon/stream-note.png",
   },
   nsis: {
     oneClick: false,
