@@ -1,6 +1,6 @@
 {
   "name": "stream-note",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "dist-electron/main/index.js",
   "description": "💧 Write like water.",
   "author": "forestlet",
