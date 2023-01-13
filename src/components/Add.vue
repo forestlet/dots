@@ -8,6 +8,7 @@ import { select_tag, date_range } from '@/data/filter';
 
 const fs = require('fs-extra')
 const path = require('path')
+const mdify = require("mdify");
 
 let inputValue = ref('')
 let dynamicTags = ref(read_tags())
@@ -44,20 +45,17 @@ const add_block = (tag: string) => {
   // 日
   let date = add0(today.getDate()).toString()
   // 文件名
-  let filename = `${year}-${month}-${date}_${tag}.json`
+  let filename = `${year}-${month}-${date}_${tag}.md`
   let note_path = path.join(notes_path, year, month, filename)
   // console.log(note_path)
 
   if (!fs.pathExistsSync(note_path)) {
     fs.ensureFileSync(note_path)
 
-    let new_note = {
-      "create_time": `${year}/${month}/${date}`,
-      "modify_time": `${year}/${month}/${date}`,
-      "content": ""
-    }
-
-    fs.writeJsonSync(note_path, new_note)
+    mdify.writeFile(note_path, {
+      create_time: today.toLocaleDateString(),
+      modify_time: today.toLocaleDateString(),
+    }, "");
 
     if (note_show(tag, today, select_tag.value, date_range.value))
       notes_list_show.value.push(note_path);

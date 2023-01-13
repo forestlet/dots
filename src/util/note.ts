@@ -30,6 +30,9 @@ export const init_notes_list = () => {
   let years = fs.readdirSync(notes_path);
   for (const year of years) {
     let years_path = path.join(notes_path, year);
+
+    if (!fs.lstatSync(years_path).isDirectory()) continue;
+
     let months = fs.readdirSync(years_path);
     for (const month of months) {
       let blocks_path = path.join(notes_path, year, month);
@@ -67,7 +70,7 @@ export const filter_notes_list = () => {
   let date = null;
 
   for (const note_path of notes_list_all) {
-    notes_filename = path.basename(note_path).replace(".json", "");
+    notes_filename = path.basename(note_path).replace(".md", "");
     tag = notes_filename.split("_")[1];
     date = new Date(notes_filename.split("_")[0].replace("-", "/"));
 

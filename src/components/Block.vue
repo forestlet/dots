@@ -3,39 +3,38 @@ import { ref } from 'vue'
 import { filter_notes_list, notes_list_show } from "@/util/note"
 import { select_tag } from "@/data/filter"
 import { gap } from '@/data/style';
+import InkMde from 'ink-mde/vue'
+import { defineOptions } from 'ink-mde';
 
 const fs = require('fs-extra')
+const mdify = require("mdify");
 
 const props = defineProps(['note_path'])
 const note_path = props.note_path
-let tag = note_path.split("_")[1].replace(".json", "")
 
-let note_json = fs.readJSONSync(note_path)
-let content = ref(note_json.content)
-let create_time = ref(note_json.create_time)
-let modify_time = ref(note_json.modify_time)
+let tag = note_path.split("_")[1].replace(".md", "")
+let note = mdify.parseFile(note_path, { html: false })
+let content = ref(note.markdown.slice(1,))
+let create_time = note.metadata.create_time
 
-const update_note = () => {
-  save_note()
-}
-
-const add0 = (m: number) => {
-  return m < 10 ? '0' + m : m
-}
+const options = defineOptions({
+  hooks: {
+    afterUpdate: () => {
+      save_note()
+    },
+  },
+  interface: {
+    spellcheck: false,
+  },
+})
 
 const save_note = () => {
-  let today = new Date()
-  let year = today.getFullYear().toString()
-  let month = add0((today.getMonth() + 1)).toString()
-  let date = add0(today.getDate()).toString()
+  let today = new Date().toLocaleDateString()
 
-  let new_note = {
-    "create_time": create_time.value,
-    "modify_time": `${year}-${month}-${date}`,
-    "content": content.value
-  }
-
-  fs.writeJsonSync(note_path, new_note)
+  mdify.writeFile(note_path, {
+    create_time: create_time,
+    modify_time: today
+  }, content.value);
 }
 
 const delete_note = () => {
@@ -63,7 +62,7 @@ const delete_note = () => {
       </div>
     </div>
 
-    <el-input v-model="content" autosize type="textarea" placeholder="[空]" @change="update_note()" spellcheck="false" />
+    <InkMde v-model="content" :options="options" />
 
     <div class="line" v-if="gap"></div>
   </div>
@@ -87,22 +86,11 @@ const delete_note = () => {
     justify-content: space-between;
   }
 
-  &:has(.el-textarea__inner:focus) {
+  &:has(.cm-focused) {
     border: 2px solid var(--el-color-info-light-5);
 
     .info {
       opacity: 1;
-    }
-  }
-
-  .el-textarea__inner {
-    box-shadow: none;
-    resize: none;
-    overflow: hidden;
-
-    &:focus,
-    &:hover {
-      box-shadow: none;
     }
   }
 

@@ -1,0 +1,13 @@
+.ink-mde {
+  --ink-block-background-color: transparent;
+  --ink-editor-font-size: 0.9em;
+
+  .cm-focused {
+    // 不是 border ！
+    outline: none !important;
+  }
+
+  .ink-mde-details {
+    display: none !important;
+  }
+}

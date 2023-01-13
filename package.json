@@ -16,7 +16,10 @@
   "dependencies": {
     "bootstrap-icons": "^1.10.3",
     "element-plus": "^2.2.28",
-    "fs-extra": "^11.1.0"
+    "fs-extra": "^11.1.0",
+    "ink-mde": "^0.18.1",
+    "mdify": "^2.0.0",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
