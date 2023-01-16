@@ -16,6 +16,7 @@
 - [ ] lazy load
 - [ ] ~~insert image~~ -> mytho
 - [ ] update (config file AppData)
+- [ ] log: automatically extract, count, organize, and recall logs by week/month/year
 
 ## credit
 
