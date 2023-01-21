@@ -1,4 +1,6 @@
-# README
+# Hérisson
+
+🦔 Collect everyday pieces: fruit, vegetables, worms...
 
 ## draft
 
