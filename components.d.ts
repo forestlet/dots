@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     Add: typeof import('./src/components/Add.vue')['default']
     Block: typeof import('./src/components/Block.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElButtonGroup: typeof import('element-plus/es')['ElButtonGroup']
     ElDatePicker: typeof import('element-plus/es')['ElDatePicker']
     ElInput: typeof import('element-plus/es')['ElInput']
     ElOption: typeof import('element-plus/es')['ElOption']
@@ -18,5 +19,7 @@ declare module '@vue/runtime-core' {
     ElSelect: typeof import('element-plus/es')['ElSelect']
     ElTag: typeof import('element-plus/es')['ElTag']
     Filter: typeof import('./src/components/Filter.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
   }
 }

@@ -11,16 +11,18 @@
           end-placeholder="结束" size="default" @change="update_notes" />
       </div>
     </div>
-    <div class="gap_toggle">
+
+    <el-button-group>
       <el-button @click="toggle_gap" plain>
-        <span v-if="gap">
-          <i class="bi bi-columns-gap"></i>
-        </span>
-        <span v-else>
-          <i class="bi bi-columns"></i>
-        </span>
+        <i v-if="gap" class="bi bi-columns-gap"></i>
+        <i v-else class="bi bi-columns"></i>
       </el-button>
-    </div>
+
+      <el-button @click="toggleDark()" plain>
+        <i v-if="theme" class="bi bi-moon"></i>
+        <i v-else class="bi bi-sun"></i>
+      </el-button>
+    </el-button-group>
   </div>
 </template>
 
@@ -29,6 +31,20 @@ import { read_tags } from '@/util/tag';
 import { filter_notes_list, notes_list_show } from "@/util/note"
 import { select_tag, date_range } from '@/data/filter';
 import { gap } from '@/data/style';
+import { useDark, useToggle } from '@vueuse/core'
+import { ref } from 'vue';
+
+let theme = ref(Boolean(window.matchMedia("(prefers-color-scheme: light)")))
+const isDark = useDark({
+  selector: 'html',
+  attribute: 'class',
+  valueDark: 'dark',
+  valueLight: 'light',
+})
+const toggleDark = () => {
+  theme.value = !theme.value
+  useToggle(isDark)()
+}
 
 const tags = read_tags()
 const update_notes = () => {
@@ -42,12 +58,12 @@ const toggle_gap = () => {
 
 <style scoped lang="scss">
 .filter {
-  margin: auto;
+  margin: 4px auto;
   // 下面的 blocks 由于 scroller 左偏了一些，为了“居中”，要设置一下
   padding-right: 3%;
   display: flex;
   flex-direction: row;
-  width: 460px;
+  width: 520px;
 
   .tag_selector {
     width: 160px;
@@ -59,9 +75,6 @@ const toggle_gap = () => {
     margin-right: 6px;
   }
 
-  .gap_toggle {
-    width: 48px;
-  }
 
   .demo-date-picker {
     display: flex;
