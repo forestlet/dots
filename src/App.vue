@@ -1,15 +1,24 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+import TabBar from "@/components/TabBar.vue"
 </script>
 
 <template>
-  <router-view>
-  </router-view>
+  <TabBar></TabBar>
+
+  <div class="router-view">
+    <router-view>
+    </router-view>
+  </div>
 </template>
 
-<style>
+<style lang="scss">
 #app {
   font-family: iawriter-mono, Nitti, Menlo, consolas, 黑体, monospace;
+  display: flex;
+  flex-direction: row;
+
+  .router-view {
+    width: 100%;
+  }
 }
 </style>

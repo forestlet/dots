@@ -6,7 +6,7 @@ import { notes_list_show } from '@/util/note'
 </script>
 
 <template>
-    <div class="article">
+    <div class="container">
         <Filter />
 
         <div class="notes">
@@ -24,7 +24,7 @@ import { notes_list_show } from '@/util/note'
 </template>
 
 <style lang="scss">
-.article {
+.container {
     .notes {
         margin-top: 8px;
     }

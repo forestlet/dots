@@ -1,10 +1,10 @@
 import { createRouter, createWebHashHistory } from "vue-router";
-import About from "@/pages/About.vue";
+import Setting from "@/pages/Setting.vue";
 import Collection from "@/pages/Collection.vue";
 
 const routes = [
   { path: "/", component: Collection },
-  { path: "/about", component: About },
+  { path: "/setting", component: Setting },
 ];
 
 export const router = createRouter({

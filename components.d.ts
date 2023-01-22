@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    About: typeof import('./src/components/About.vue')['default']
     Add: typeof import('./src/components/Add.vue')['default']
     Block: typeof import('./src/components/Block.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
@@ -18,8 +19,10 @@ declare module '@vue/runtime-core' {
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     ElSelect: typeof import('element-plus/es')['ElSelect']
     ElTag: typeof import('element-plus/es')['ElTag']
+    ElTooltip: typeof import('element-plus/es')['ElTooltip']
     Filter: typeof import('./src/components/Filter.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TabBar: typeof import('./src/components/TabBar.vue')['default']
   }
 }

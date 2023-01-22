@@ -26,3 +26,4 @@
 - [voracious/ink-mde](https://github.com/voracious/ink-mde)
 - [IonicaBizau/mdify](https://github.com/IonicaBizau/mdify)
 - [microsoft/fluentui-emoji](https://github.com/microsoft/fluentui-emoji)
+- [miniMAC/magic](https://github.com/miniMAC/magic)
