@@ -1,14 +1,14 @@
 <template>
   <div class="filter">
     <div class="tag_selector">
-      <el-select v-model="select_tag" placeholder="标签" @change="update_notes" clearable>
+      <el-select v-model="select_tag" placeholder="标签" @change="update_collection" clearable>
         <el-option v-for="tag in tags" :key="tag" :label="tag" :value="tag" />
       </el-select>
     </div>
     <div class="data_range">
       <div class="demo-date-picker">
         <el-date-picker v-model="date_range" type="daterange" range-separator="-" start-placeholder="开始"
-          end-placeholder="结束" size="default" @change="update_notes" />
+          end-placeholder="结束" size="default" @change="update_collection" />
       </div>
     </div>
 
@@ -21,13 +21,13 @@
 
 <script lang="ts" setup>
 import { read_tags } from '@/util/tag';
-import { filter_notes_list, notes_list_show } from "@/util/note"
+import { filter_collection, collection_filtered } from "@/util/piece"
 import { select_tag, date_range } from '@/data/filter';
 import { gap } from '@/data/style';
 
 const tags = read_tags()
-const update_notes = () => {
-  notes_list_show.value = filter_notes_list()
+const update_collection = () => {
+  collection_filtered.value = filter_collection()
 }
 
 const toggle_gap = () => {

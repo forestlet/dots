@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Collection from "./pages/Collection.vue";
 import Setting from "./pages/Setting.vue";
-import ControlBar from "./components/ControlBar.vue"
+import ControlBar from "./components/Common/ControlBar.vue"
 </script>
 
 <template>

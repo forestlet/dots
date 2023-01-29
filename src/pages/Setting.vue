@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import About from '@/components/About.vue';
-import Appearance from '@/components/Appearance.vue';
+import About from '@/components/Setting/About.vue';
+import Appearance from '@/components/Setting/Appearance.vue';
 import { ref } from 'vue';
 
 const settingVisible = ref(false)

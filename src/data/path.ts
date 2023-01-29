@@ -6,4 +6,4 @@ export const tags_path = path.join(
   "demo",
   "tags.json"
 );
-export const notes_path = path.join(process.env["PUBLIC"], "demo");
+export const collection_path = path.join(process.env["PUBLIC"], "demo");

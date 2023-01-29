@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import Block from '@/components/Block.vue'
-import Filter from '@/components/Filter.vue'
+import Piece from '@/components/Collection/Piece.vue'
+import Filter from '@/components/Collection/Filter.vue'
 import { gap } from '@/data/style';
-import { notes_list_show } from '@/util/note'
+import { collection_filtered } from '@/util/piece'
 </script>
 
 <template>
     <div class="container">
         <Filter />
 
-        <div class="notes">
+        <div class="pieces">
             <el-scrollbar height="calc(100vh - 80px)">
-                <template v-for="note_path in notes_list_show" :key="note_path">
-                    <Block :note_path="note_path" />
+                <template v-for="piece_path in collection_filtered" :key="piece_path">
+                    <Piece :piece_path="piece_path" />
                 </template>
 
                 <div class="add" v-if="gap">
@@ -25,9 +25,9 @@ import { notes_list_show } from '@/util/note'
 
 <style lang="scss">
 .container {
-    margin-top: 32px;
+    margin: 32px 4px 4px 0;
 
-    .notes {
+    .pieces {
         margin-top: 8px;
     }
 

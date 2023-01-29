@@ -7,11 +7,10 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    About: typeof import('./src/components/About.vue')['default']
-    Add: typeof import('./src/components/Add.vue')['default']
-    Appearance: typeof import('./src/components/Appearance.vue')['default']
-    Block: typeof import('./src/components/Block.vue')['default']
-    ControlBar: typeof import('./src/components/ControlBar.vue')['default']
+    About: typeof import('./src/components/Setting/About.vue')['default']
+    Add: typeof import('./src/components/Collection/Add.vue')['default']
+    Appearance: typeof import('./src/components/Setting/Appearance.vue')['default']
+    ControlBar: typeof import('./src/components/Common/ControlBar.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElButtonGroup: typeof import('element-plus/es')['ElButtonGroup']
     ElCheckbox: typeof import('element-plus/es')['ElCheckbox']
@@ -32,9 +31,10 @@ declare module '@vue/runtime-core' {
     ElSwitch: typeof import('element-plus/es')['ElSwitch']
     ElTag: typeof import('element-plus/es')['ElTag']
     ElTimePicker: typeof import('element-plus/es')['ElTimePicker']
-    Filter: typeof import('./src/components/Filter.vue')['default']
+    Filter: typeof import('./src/components/Collection/Filter.vue')['default']
+    Piece: typeof import('./src/components/Collection/Piece.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TabBar: typeof import('./src/components/TabBar.vue')['default']
+    TabBar: typeof import('./src/components/Common/TabBar.vue')['default']
   }
 }

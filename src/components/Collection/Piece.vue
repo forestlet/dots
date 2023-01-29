@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { filter_notes_list, notes_list_show } from "@/util/note"
+import { collection_filtered, filter_collection } from "@/util/piece"
 import { select_tag } from "@/data/filter"
 import { gap } from '@/data/style';
 import InkMde from 'ink-mde/vue'
@@ -9,18 +9,18 @@ import { defineOptions } from 'ink-mde';
 const fs = require('fs-extra')
 const mdify = require("mdify");
 
-const props = defineProps(['note_path'])
-const note_path = props.note_path
+const props = defineProps(['piece_path'])
+const piece_path = props.piece_path
 
-let tag = note_path.split("_")[1].replace(".md", "")
-let note = mdify.parseFile(note_path, { html: false })
-let content = ref(note.markdown.slice(1,))
-let create_time = note.metadata.create_time
+let tag = piece_path.split("_")[1].replace(".md", "")
+let piece = mdify.parseFile(piece_path, { html: false })
+let content = ref(piece.markdown.slice(1,))
+let create_time = piece.metadata.create_time
 
 const options = defineOptions({
   hooks: {
     afterUpdate: () => {
-      save_note()
+      save_piece()
     },
   },
   interface: {
@@ -28,25 +28,25 @@ const options = defineOptions({
   },
 })
 
-const save_note = () => {
+const save_piece = () => {
   let today = new Date().toLocaleDateString()
 
-  mdify.writeFile(note_path, {
+  mdify.writeFile(piece_path, {
     create_time: create_time,
     modify_time: today
   }, content.value);
 }
 
-const delete_note = () => {
-  fs.removeSync(note_path)
+const delete_piece = () => {
+  fs.removeSync(piece_path)
 
   // 更新
-  notes_list_show.value = filter_notes_list()
+  collection_filtered.value = filter_collection()
 }
 </script>
 
 <template>
-  <div class="block">
+  <div class="piece">
 
     <div class="info" v-if="gap">
       <div class="left">
@@ -58,7 +58,7 @@ const delete_note = () => {
       </div>
 
       <div class="right">
-        <el-button link @click="delete_note"> <i class="bi bi-trash3"></i></el-button>
+        <el-button link @click="delete_piece"> <i class="bi bi-trash3"></i></el-button>
       </div>
     </div>
 
@@ -69,7 +69,7 @@ const delete_note = () => {
 </template>
 
 <style lang="scss">
-.block {
+.piece {
   max-width: 80%;
   margin: 0 auto;
   padding-top: 6px;
