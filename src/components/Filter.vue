@@ -12,17 +12,10 @@
       </div>
     </div>
 
-    <el-button-group>
-      <el-button @click="toggle_gap" plain>
-        <i v-if="gap" class="bi bi-columns-gap"></i>
-        <i v-else class="bi bi-columns"></i>
-      </el-button>
-
-      <el-button @click="toggleDark()" plain>
-        <i v-if="theme" class="bi bi-moon"></i>
-        <i v-else class="bi bi-sun"></i>
-      </el-button>
-    </el-button-group>
+    <el-button @click="toggle_gap" plain>
+      <i v-if="gap" class="bi bi-columns-gap"></i>
+      <i v-else class="bi bi-columns"></i>
+    </el-button>
   </div>
 </template>
 
@@ -31,20 +24,6 @@ import { read_tags } from '@/util/tag';
 import { filter_notes_list, notes_list_show } from "@/util/note"
 import { select_tag, date_range } from '@/data/filter';
 import { gap } from '@/data/style';
-import { useDark, useToggle } from '@vueuse/core'
-import { ref } from 'vue';
-
-let theme = ref(Boolean(window.matchMedia("(prefers-color-scheme: light)")))
-const isDark = useDark({
-  selector: 'html',
-  attribute: 'class',
-  valueDark: 'dark',
-  valueLight: 'light',
-})
-const toggleDark = () => {
-  theme.value = !theme.value
-  useToggle(isDark)()
-}
 
 const tags = read_tags()
 const update_notes = () => {

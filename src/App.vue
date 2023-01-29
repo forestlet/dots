@@ -1,14 +1,11 @@
 <script setup lang="ts">
-import TabBar from "@/components/TabBar.vue"
+import Collection from "./pages/Collection.vue";
+import Setting from "./pages/Setting.vue";
 </script>
 
 <template>
-  <TabBar></TabBar>
-
-  <div class="router-view">
-    <router-view>
-    </router-view>
-  </div>
+  <Collection></Collection>
+  <Setting></Setting>
 </template>
 
 <style lang="scss">

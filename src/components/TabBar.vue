@@ -14,7 +14,7 @@
         <div class="sub-tab">
             <div class="tab-item" id="setting">
                 <router-link to="/setting">
-                    <i class="bi bi-sliders2"></i>
+
                 </router-link>
             </div>
         </div>
@@ -24,7 +24,6 @@
 <style lang="scss">
 .tab-bar {
     width: 2.5rem;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;

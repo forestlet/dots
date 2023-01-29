@@ -57,9 +57,11 @@ const clicks = () => {
     .logo {
         cursor: pointer;
         padding: 60px;
+        padding-left: 150px;
         width: 160px;
         height: 160px;
         user-select: none;
+        margin: auto;
 
         -webkit-animation-duration: 1s;
         animation-duration: 0.8s;

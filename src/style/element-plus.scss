@@ -1,7 +1,8 @@
 @forward "element-plus/theme-chalk/src/common/var.scss" with (
   $colors: (
     "primary": (
-      "base": #c8c9cc, // --el-color-info-light-5
+      "base": #c8c9cc,
+      // --el-color-info-light-5
     ),
   )
 );
@@ -17,10 +18,19 @@
   --el-button-text-color: var(--el-border-color-darker);
 }
 
-.el-popper__arrow::before{
+.el-popper__arrow::before {
   border: 1.5px solid var(--el-color-primary) !important;
 }
 
-.el-popper.is-light{
+.el-popper.is-light {
   border: none;
+}
+
+.el-overlay {
+  background-color: rgba(0, 0, 0, 0.01);
+  backdrop-filter: blur(8px);
+}
+
+.el-dialog {
+  border-radius: 8px;
 }

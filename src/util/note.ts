@@ -5,25 +5,6 @@ import { select_tag, date_range } from "@/data/filter";
 const fs = require("fs-extra");
 const path = require("path");
 
-// export const init_note_tree = () => {
-//   let notes_tree = {};
-
-//   let years = fs.readdirSync(notes_path);
-//   for (const year of years) {
-//     notes_tree[year] = {};
-//     let years_path = path.join(notes_path, year);
-//     let months = fs.readdirSync(years_path);
-//     for (const month of months) {
-//       let blocks_path = path.join(notes_path, year, month);
-//       let items = fs.readdirSync(blocks_path);
-
-//       notes_tree[year][month] = items;
-//     }
-//   }
-//   // console.log(notes_tree);
-//   return notes_tree;
-// };
-
 export const init_notes_list = () => {
   let notes_list_all = [];
 
