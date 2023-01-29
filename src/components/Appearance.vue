@@ -3,10 +3,10 @@
         <el-form label-width="120px" label-position="left">
             <el-form-item label="Theme">
                 <el-button @click="toggleDark()" text :class="{'active': theme}">
-                    <i class="bi bi-moon"></i>
+                    <i class="bi bi-sun"></i>
                 </el-button>
                 <el-button @click="toggleDark()" text :class="{ 'active': !theme }">
-                    <i class="bi bi-sun"></i>
+                    <i class="bi bi-moon"></i>
                 </el-button>
             </el-form-item>
         </el-form>
