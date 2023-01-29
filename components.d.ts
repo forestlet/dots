@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
     Add: typeof import('./src/components/Add.vue')['default']
     Appearance: typeof import('./src/components/Appearance.vue')['default']
     Block: typeof import('./src/components/Block.vue')['default']
+    ControlBar: typeof import('./src/components/ControlBar.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElButtonGroup: typeof import('element-plus/es')['ElButtonGroup']
     ElCheckbox: typeof import('element-plus/es')['ElCheckbox']

@@ -34,3 +34,11 @@
 .el-dialog {
   border-radius: 8px;
 }
+
+.el-button.is-text:not(.is-disabled):focus {
+  background-color: unset !important;
+}
+
+.el-button.is-text:not(.is-disabled):hover {
+  background-color: var(--el-fill-color-light) !important;
+}

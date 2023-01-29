@@ -10,7 +10,7 @@ import { notes_list_show } from '@/util/note'
         <Filter />
 
         <div class="notes">
-            <el-scrollbar height="calc(100vh - 48px)">
+            <el-scrollbar height="calc(100vh - 80px)">
                 <template v-for="note_path in notes_list_show" :key="note_path">
                     <Block :note_path="note_path" />
                 </template>
@@ -25,6 +25,8 @@ import { notes_list_show } from '@/util/note'
 
 <style lang="scss">
 .container {
+    margin-top: 32px;
+
     .notes {
         margin-top: 8px;
     }
