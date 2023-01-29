@@ -70,10 +70,11 @@ const delete_note = () => {
 
 <style lang="scss">
 .block {
-  margin: 0 12px 0 2px;
+  max-width: 80%;
+  margin: 0 auto;
   padding-top: 6px;
   border-radius: 4px;
-  border: 2px solid var(--el-bg-color);
+  border: 2px solid transparent;
 
   .info {
     opacity: 1;

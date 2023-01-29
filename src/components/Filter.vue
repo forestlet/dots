@@ -38,11 +38,9 @@ const toggle_gap = () => {
 <style scoped lang="scss">
 .filter {
   margin: 4px auto;
-  // 下面的 blocks 由于 scroller 左偏了一些，为了“居中”，要设置一下
-  padding-right: 3%;
   display: flex;
   flex-direction: row;
-  width: 520px;
+  width: fit-content;
 
   .tag_selector {
     width: 160px;
