@@ -14,7 +14,7 @@
   files: ["dist-electron", "dist"],
   mac: {
     artifactName: "${productName}_${version}.${ext}",
-    icon: "./icon/stream-note.png",
+    icon: "./icon/icon.png",
     target: ["dmg"],
   },
   win: {
@@ -25,7 +25,7 @@
       },
     ],
     artifactName: "${productName}_${version}.${ext}",
-    icon: "./icon/stream-note.png",
+    icon: "./icon/icon.png",
   },
   nsis: {
     oneClick: false,
