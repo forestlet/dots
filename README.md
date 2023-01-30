@@ -14,6 +14,7 @@
   - [ ] today
   - [ ] whole year/month/week
   - [ ] last month/week
+  - [ ] refine style
 - [ ] tag
   - [x] new
   - [ ] multi-tag
