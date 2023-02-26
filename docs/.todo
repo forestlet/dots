@@ -1,0 +1,34 @@
+# todo
+
+### filter
+
+- [x] date
+  - [ ] today
+  - [ ] whole year/month/week
+  - [ ] last month/week
+  - [ ] refine style
+- [ ] tag
+  - [x] new
+  - [ ] multi-tag
+  - [ ] delete
+
+### collection
+
+- [x] auto save
+- [x] markdown & metadata-> highly recommend [🪶 mytho](https://github.com/mytho-team/mytho)
+- [ ] new piece style
+- [ ] muti-tag
+- [ ] 缩小，选择，右边显示属性，可以多选，合并、删除等操作
+- [ ] search
+- [ ] zoom
+- [ ] pin
+- [ ] lazy load
+- [ ] log: automatically extract, count, organize, and recall logs by week/month/year
+- [ ] ~~add past piece~~ -> time traveling
+- [ ] ~~insert image~~ -> mytho
+
+### setting
+
+- [ ] config file
+- [ ] choose folder
+- [ ] update
