@@ -1,7 +1,7 @@
 .ink-mde {
   --ink-block-background-color: transparent;
   --ink-editor-font-size: 0.9em;
-  --ink-font-family: "更纱黑体 UI SC";
+  --ink-font-family: var(--herisson-font-family);
 
   .cm-focused {
     // 不是 border ！

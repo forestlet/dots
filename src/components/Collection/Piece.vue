@@ -104,5 +104,9 @@ const delete_piece = () => {
     position: relative;
     top: 2px;
   }
+
+  .left {
+    font-family: Consolas;
+  }
 }
 </style>

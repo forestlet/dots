@@ -1,3 +1,13 @@
+:root {
+  --herisson-font-family: "更纱黑体 UI SC";
+}
 body {
-  font-family: Consolas, "更纱黑体 UI SC", "Courier New", monospace;
+  font-family: var(--herisson-font-family);
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: var(--herisson-font-family) !important;
+  }
 }

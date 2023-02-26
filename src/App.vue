@@ -12,7 +12,6 @@ import ControlBar from "./components/Common/ControlBar.vue"
 
 <style lang="scss">
 #app {
-  font-family: iawriter-mono, Nitti, Menlo, consolas, 黑体, monospace;
   display: flex;
   flex-direction: row;
 
