@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import About from '@/components/Setting/About.vue';
 import Appearance from '@/components/Setting/Appearance.vue';
+import General from '@/components/Setting/General.vue';
 import { ref } from 'vue';
 
 const settingVisible = ref(false)
@@ -21,6 +22,7 @@ const openSetting = () => {
             <el-scrollbar height="calc(80vh - 40px)">
                 <About />
                 <Appearance></Appearance>
+                <General></General>
             </el-scrollbar>
         </el-dialog>
     </div>
@@ -33,7 +35,7 @@ const openSetting = () => {
     .setting_btn {
         position: fixed;
         bottom: 8px;
-        left: 4px;
+        left: 8px;
         opacity: 0.2;
 
         &:hover {

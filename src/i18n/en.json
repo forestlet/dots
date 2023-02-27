@@ -1,0 +1,31 @@
+{
+    "filter": {
+        "tag": "Tags",
+        "date-picker": {
+            "start-date": "Start",
+            "end-date": "End"
+        },
+        "shortcuts": {
+            "today": "Today",
+            "this-week": "This Week",
+            "this-month": "This Month",
+            "this-year": "This Year",
+            "last-week": "Last Week",
+            "last-month": "Last Month",
+            "last-year": "Last Year"
+        }
+    },
+    "collection": {},
+    "setting": {
+        "appearance": {
+            "theme-form-item": "Theme"
+        },
+        "general": {
+            "language-form-item": "Language",
+            "language": {
+                "cn": "中文",
+                "en": "English"
+            }
+        }
+    }
+}

@@ -2,12 +2,15 @@
 import Collection from "./pages/Collection.vue";
 import Setting from "./pages/Setting.vue";
 import ControlBar from "./components/Common/ControlBar.vue"
+import { element_plus_locale } from "@/data/locale"
 </script>
 
 <template>
-  <ControlBar></ControlBar>
-  <Collection></Collection>
-  <Setting></Setting>
+  <el-config-provider :locale="element_plus_locale">
+    <ControlBar></ControlBar>
+    <Collection></Collection>
+    <Setting></Setting>
+  </el-config-provider>
 </template>
 
 <style lang="scss">

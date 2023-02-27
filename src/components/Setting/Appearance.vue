@@ -1,8 +1,13 @@
 <template>
     <div class="appearance">
         <el-form label-width="120px" label-position="left">
-            <el-form-item label="Theme">
-                <el-button @click="toggleDark()" text :class="{'active': theme}">
+            <el-form-item>
+                <template #label>
+                    <span class="icon"> <i class="bi bi-palette2"></i></span>
+                    <span> {{ $t("message.setting.appearance.theme-form-item") }} </span>
+                </template>
+
+                <el-button @click="toggleDark()" text :class="{ 'active': theme }">
                     <i class="bi bi-sun"></i>
                 </el-button>
                 <el-button @click="toggleDark()" text :class="{ 'active': !theme }">
@@ -42,6 +47,10 @@ const toggleDark = () => {
 
     .active {
         background-color: var(--el-color-info-light-9) !important;
+    }
+
+    .icon {
+        margin-right: 12px;
     }
 }
 </style>

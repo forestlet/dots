@@ -1,14 +1,16 @@
 <template>
   <div class="filter">
     <div class="tag_selector">
-      <el-select v-model="select_tag" placeholder="标签" @change="update_collection" clearable>
+      <el-select v-model="select_tag" :placeholder='$t("message.filter.tag")' @change="update_collection" clearable>
         <el-option v-for="tag in tags" :key="tag" :label="tag" :value="tag" />
       </el-select>
     </div>
-    <div class="data_range">
+    <div class="date_range">
       <div class="demo-date-picker">
-        <el-date-picker v-model="date_range" type="daterange" range-separator="-" start-placeholder="开始"
-          end-placeholder="结束" size="default" @change="update_collection" :shortcuts="shortcuts" unlink-panels />
+        <el-date-picker v-model="date_range" type="daterange" range-separator="-"
+          :start-placeholder='$t("message.filter.date-picker.start-date")'
+          :end-placeholder='$t("message.filter.date-picker.end-date")' size="default" @change="update_collection"
+          :shortcuts="shortcuts" unlink-panels />
       </div>
     </div>
 
@@ -24,6 +26,7 @@ import { read_tags } from '@/util/tag';
 import { filter_collection, collection_filtered } from "@/util/piece"
 import { select_tag, date_range } from '@/data/filter';
 import { gap } from '@/data/style';
+import { i18n } from '@/i18n/i18n';
 
 const tags = read_tags()
 const update_collection = () => {
@@ -34,9 +37,9 @@ const toggle_gap = () => {
   gap.value = !gap.value
 }
 
-const shortcuts = [
+let shortcuts = [
   {
-    text: 'Today',
+    text: i18n.global.t("message.filter.shortcuts.today"),
     value: () => {
       const end = new Date()
       const start = new Date()
@@ -44,7 +47,7 @@ const shortcuts = [
     },
   },
   {
-    text: 'This week',
+    text: i18n.global.t("message.filter.shortcuts.this-week"),
     value: () => {
       const end = new Date()
       const start = new Date()
@@ -53,7 +56,7 @@ const shortcuts = [
     },
   },
   {
-    text: 'This month',
+    text: i18n.global.t("message.filter.shortcuts.this-month"),
     value: () => {
       const end = new Date()
       const start = new Date()
@@ -62,7 +65,7 @@ const shortcuts = [
     },
   },
   {
-    text: 'This year',
+    text: i18n.global.t("message.filter.shortcuts.this-year"),
     value: () => {
       const end = new Date()
       const start = new Date()
@@ -71,7 +74,7 @@ const shortcuts = [
     },
   },
   {
-    text: 'Last week',
+    text: i18n.global.t("message.filter.shortcuts.last-week"),
     value: () => {
       const end = new Date()
       const start = new Date()
@@ -80,7 +83,7 @@ const shortcuts = [
     },
   },
   {
-    text: 'Last month',
+    text: i18n.global.t("message.filter.shortcuts.last-month"),
     value: () => {
       const end = new Date()
       const start = new Date()
@@ -89,7 +92,7 @@ const shortcuts = [
     },
   },
   {
-    text: 'Last year',
+    text: i18n.global.t("message.filter.shortcuts.last-year"),
     value: () => {
       const end = new Date()
       const start = new Date()
@@ -112,7 +115,7 @@ const shortcuts = [
     margin-right: 6px;
   }
 
-  .data_range {
+  .date_range {
     width: 240px;
     margin-right: 6px;
   }

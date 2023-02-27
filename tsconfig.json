@@ -23,7 +23,8 @@
     ]
   },
   "include": [
-    "src"
+    "src",
+    "element-plus.d.ts",
   ],
   "references": [
     {

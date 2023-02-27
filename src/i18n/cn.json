@@ -1,0 +1,31 @@
+{
+    "filter": {
+        "tag": "标签",
+        "date-picker": {
+            "start-date": "开始",
+            "end-date": "结束"
+        },
+        "shortcuts": {
+            "today": "今天",
+            "this-week": "本周",
+            "this-month": "本月",
+            "this-year": "今年",
+            "last-week": "上周",
+            "last-month": "上月",
+            "last-year": "去年"
+        }
+    },
+    "collection": {},
+    "setting": {
+        "appearance": {
+            "theme-form-item": "主题模式"
+        },
+        "general": {
+            "language-form-item": "语言",
+            "language": {
+                "cn": "中文",
+                "en": "English"
+            }
+        }
+    }
+}
