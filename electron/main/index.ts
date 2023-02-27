@@ -45,6 +45,8 @@ async function createWindow() {
     title: "Hérisson",
     titleBarStyle: "hidden",
     icon: join(process.env.PUBLIC, "icon", "favicon.ico"),
+    minWidth: 800,
+    minHeight: 600,
     webPreferences: {
       preload,
       // Warning: Enable nodeIntegration and disable contextIsolation is not secure in production

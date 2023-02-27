@@ -7,10 +7,10 @@
                     <span> {{ $t("message.setting.appearance.theme-form-item") }} </span>
                 </template>
 
-                <el-button @click="toggleDark()" text :class="{ 'active': theme }">
+                <el-button @click="toggleTheme('light')" text :class="{ 'active': theme == 'light' }">
                     <i class="bi bi-sun"></i>
                 </el-button>
-                <el-button @click="toggleDark()" text :class="{ 'active': !theme }">
+                <el-button @click="toggleTheme('dark')" text :class="{ 'active': theme == 'dark' }">
                     <i class="bi bi-moon"></i>
                 </el-button>
             </el-form-item>
@@ -22,16 +22,21 @@
 import { useDark, useToggle } from '@vueuse/core'
 import { ref } from 'vue';
 
-let theme = ref(Boolean(window.matchMedia("(prefers-color-scheme: light)")))
+let theme = ref(window.matchMedia("(prefers-color-scheme: light)") ? "light" : "dark")
 const isDark = useDark({
     selector: 'html',
     attribute: 'class',
     valueDark: 'dark',
     valueLight: 'light',
 })
-const toggleDark = () => {
-    theme.value = !theme.value
-    useToggle(isDark)()
+const toggleDark = useToggle(isDark)
+console.log(theme.value);
+
+const toggleTheme = (next_theme: any) => {
+    console.log(theme.value,next_theme);
+    
+    theme.value = next_theme
+    toggleDark(next_theme == "dark")
 }
 </script>
 
@@ -45,6 +50,7 @@ const toggleDark = () => {
         flex-wrap: nowrap;
     }
 
+    .el-button.is-text:not(.is-disabled):focus.active,
     .active {
         background-color: var(--el-color-info-light-9) !important;
     }
