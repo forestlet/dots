@@ -13,7 +13,7 @@ import ControlBar from "./components/Common/ControlBar.vue"
 <style lang="scss">
 #app {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
   .router-view {
     width: 100%;

@@ -1,5 +1,9 @@
 <template>
     <div class="control-bar">
+        <el-button key="plain" text @click="refresh" class="control-tab">
+            <i class="bi bi-arrow-clockwise"></i>
+        </el-button>
+
         <div class="drag">
 
         </div>
@@ -26,6 +30,10 @@ import { ref } from 'vue'
 
 let isWindowMax = ref(false)
 
+const refresh = () => {
+    window.location.reload()
+}
+
 const minWindow = () => {
     ipcRenderer.send('min-app')
 }
@@ -50,7 +58,7 @@ const maxRestoreWindow = () => {
     -webkit-user-drag: auto;
 
     .drag {
-        width: calc(100% - 130px);
+        flex: 1;
         app-region: drag;
     }
 }
