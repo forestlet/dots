@@ -3,10 +3,10 @@
 ### filter
 
 - [x] date
-  - [ ] today
-  - [ ] whole year/month/week
-  - [ ] last month/week
-  - [ ] refine style
+  - [x] today
+  - [x] this week/month/year
+  - [x] last week/month/year
+  - [x] refine style
 - [ ] tag
   - [x] new
   - [ ] multi-tag

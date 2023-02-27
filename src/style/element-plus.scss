@@ -42,3 +42,24 @@
 .el-button.is-text:not(.is-disabled):hover {
   background-color: var(--el-fill-color-light) !important;
 }
+
+.el-picker__popper {
+  border-radius: 8px;
+  border: 1px solid var(--el-border-color-light);
+
+  .el-picker-panel {
+    border-radius: 8px;
+    .el-picker-panel__body-wrapper {
+      user-select: none;
+
+      .el-picker-panel__sidebar {
+        border-radius: 8px 0 0 8px !important;
+        width: 120px;
+      }
+
+      .el-picker-panel__content.is-right {
+        border-radius: 0 8px 0 8px !important;
+      }
+    }
+  }
+}

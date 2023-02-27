@@ -8,7 +8,7 @@
     <div class="data_range">
       <div class="demo-date-picker">
         <el-date-picker v-model="date_range" type="daterange" range-separator="-" start-placeholder="开始"
-          end-placeholder="结束" size="default" @change="update_collection" />
+          end-placeholder="结束" size="default" @change="update_collection" :shortcuts="shortcuts" unlink-panels />
       </div>
     </div>
 
@@ -33,6 +33,71 @@ const update_collection = () => {
 const toggle_gap = () => {
   gap.value = !gap.value
 }
+
+const shortcuts = [
+  {
+    text: 'Today',
+    value: () => {
+      const end = new Date()
+      const start = new Date()
+      return [start, end]
+    },
+  },
+  {
+    text: 'This week',
+    value: () => {
+      const end = new Date()
+      const start = new Date()
+      start.setTime(start.getTime() - (start.getDay() - 1) * 24 * 60 * 60 * 1000)
+      return [start, end]
+    },
+  },
+  {
+    text: 'This month',
+    value: () => {
+      const end = new Date()
+      const start = new Date()
+      start.setTime(start.setDate(1))
+      return [start, end]
+    },
+  },
+  {
+    text: 'This year',
+    value: () => {
+      const end = new Date()
+      const start = new Date()
+      start.setTime(new Date(start.setMonth(0)).setDate(1))
+      return [start, end]
+    },
+  },
+  {
+    text: 'Last week',
+    value: () => {
+      const end = new Date()
+      const start = new Date()
+      start.setTime(start.getTime() - 3600 * 1000 * 24 * 7)
+      return [start, end]
+    },
+  },
+  {
+    text: 'Last month',
+    value: () => {
+      const end = new Date()
+      const start = new Date()
+      start.setTime(start.setMonth(start.getMonth() - 1))
+      return [start, end]
+    },
+  },
+  {
+    text: 'Last year',
+    value: () => {
+      const end = new Date()
+      const start = new Date()
+      start.setTime(start.setFullYear(start.getFullYear() - 1))
+      return [start, end]
+    },
+  },
+]
 </script>
 
 <style scoped lang="scss">
