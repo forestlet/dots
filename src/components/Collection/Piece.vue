@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { reactive, ref } from 'vue'
 import { collection_filtered, filter_collection } from "@/util/piece"
 import { select_tag } from "@/data/filter"
 import { gap } from '@/data/style';
 import InkMde from 'ink-mde/vue'
-import { defineOptions } from 'ink-mde';
 
 const fs = require('fs-extra')
 const mdify = require("mdify");
@@ -17,7 +16,7 @@ let piece = mdify.parseFile(piece_path, { html: false })
 let content = ref(piece.markdown.slice(1,))
 let create_time = piece.metadata.create_time
 
-const options = defineOptions({
+const options = reactive({
   hooks: {
     afterUpdate: () => {
       save_piece()
