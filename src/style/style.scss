@@ -1,15 +1,15 @@
 :root {
-  --herisson-font-family: "更纱黑体 UI SC";
+  --dots-font-family: '更纱黑体 UI SC';
 }
 
 body {
-  font-family: var(--herisson-font-family);
+  font-family: var(--dots-font-family);
   button,
   input,
   optgroup,
   select,
   textarea {
-    font-family: var(--herisson-font-family) !important;
+    font-family: var(--dots-font-family) !important;
   }
 }
 

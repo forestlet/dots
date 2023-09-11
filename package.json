@@ -1,5 +1,5 @@
 {
-  "name": "herisson",
+  "name": "dots",
   "version": "0.1.0",
   "main": "dist-electron/main/index.js",
   "description": "🦔 Collect the dots.",
@@ -8,7 +8,8 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build && electron-builder"
+    "build": "vue-tsc --noEmit && vite build && electron-builder",
+    "format": "prettier --write ."
   },
   "engines": {
     "node": "^14.18.0 || >=16.0.0"
@@ -33,6 +34,7 @@
     "naive-ui": "^2.34.4",
     "normalize.css": "^8.0.1",
     "postcss": "^8.4.29",
+    "prettier": "^3.0.3",
     "sass": "^1.66.1",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.2.2",

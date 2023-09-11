@@ -2,30 +2,30 @@
  * @see https://www.electron.build/configuration/configuration
  */
 {
-  appId: "YourAppID",
+  appId: 'YourAppID',
   asar: true,
   extraResources: {
-    from: "./public",
-    to: "./",
+    from: './public',
+    to: './',
   },
   directories: {
-    output: "release/${version}",
+    output: 'release/${version}',
   },
-  files: ["dist-electron", "dist"],
+  files: ['dist-electron', 'dist'],
   mac: {
-    artifactName: "${productName}_${version}.${ext}",
-    icon: "./icon/icon.png",
-    target: ["dmg"],
+    artifactName: '${productName}_${version}.${ext}',
+    icon: './icon/icon.png',
+    target: ['dmg'],
   },
   win: {
     target: [
       {
-        target: "nsis",
-        arch: ["x64"],
+        target: 'nsis',
+        arch: ['x64'],
       },
     ],
-    artifactName: "${productName}_${version}.${ext}",
-    icon: "./icon/icon.png",
+    artifactName: '${productName}_${version}.${ext}',
+    icon: './icon/icon.png',
   },
   nsis: {
     oneClick: false,

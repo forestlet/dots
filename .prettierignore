@@ -1,0 +1,16 @@
+dist
+dist-elctron
+release
+public/demo
+
+target
+
+node_modules
+
+*-dist
+plugin
+
+*.vue
+*.min.*
+*.d.ts
+

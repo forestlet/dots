@@ -1,3 +1,3 @@
-import { Ref } from "vue";
+import { Ref } from 'vue'
 
-export type iLocale = Ref<"zh" | "en">;
+export type iLocale = Ref<'zh' | 'en'>

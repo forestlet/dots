@@ -35,7 +35,7 @@ const clicks = () => {
             <span class="cherry">🍒</span>
             <span class="strawberry">🍓</span>
 
-            <span class="herisson">🦔</span>
+            <span class="dots">🦔</span>
 
             <span class="tomato">🍅</span>
             <span class="carrot">🥕</span>
@@ -167,7 +167,7 @@ const clicks = () => {
             top: 20px;
         }
 
-        .herisson {
+        .dots {
             font-size: 3rem;
         }
 

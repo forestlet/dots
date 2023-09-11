@@ -11,24 +11,16 @@
     "baseUrl": "./",
     "strict": true,
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
+      "@/*": ["src/*"]
     },
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
-    "types": [
-      "element-plus/global",
-      "@types/node"
-    ]
+    "types": ["element-plus/global", "@types/node"]
   },
-  "include": [
-    "src",
-    "element-plus.d.ts",
-  ],
+  "include": ["src", "element-plus.d.ts"],
   "references": [
     {
       "path": "./tsconfig.node.json"
     }
-  ],
+  ]
 }

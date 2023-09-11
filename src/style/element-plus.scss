@@ -1,13 +1,13 @@
-@forward "element-plus/theme-chalk/src/common/var.scss" with (
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
   $colors: (
-    "primary": (
-      "base": #c8c9cc,
+    'primary': (
+      'base': #c8c9cc,
       // --el-color-info-light-5
     ),
   )
 );
 
-@use "element-plus/theme-chalk/src/index.scss" as *;
+@use 'element-plus/theme-chalk/src/index.scss' as *;
 
 :root {
   --el-box-shadow-light: 0px 0px 0px 1.5px var(--el-color-primary);
