@@ -1,4 +1,4 @@
-# Hérisson
+# dots
 
 🦔 Collect the dots.
 
