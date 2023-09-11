@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { nextTick, ref } from 'vue'
-import { ElInput } from 'element-plus'
 import { read_tags, write_tags } from '@/util/tag';
 import { collection_path } from "@/data/path"
 import { collection_filter, collection_filtered } from "@/util/piece"
@@ -13,7 +12,7 @@ const mdify = require("mdify");
 let inputValue = ref('')
 let dynamicTags = ref(read_tags())
 const inputVisible = ref(false)
-const InputRef = ref<InstanceType<typeof ElInput>>()
+const InputRef = ref()
 
 const showInput = () => {
   inputVisible.value = true
@@ -65,34 +64,19 @@ const add_piece = (tag: string) => {
 
 <template>
   <div class="add">
-    <el-popover placement="top" :width="400" trigger="click">
-      <template #reference>
-        <el-button plain circle class="add_btn"><i class="bi bi-plus"></i>
-        </el-button>
-      </template>
-      <el-tag v-for="tag in dynamicTags" :key="tag" :disable-transitions="false" effect="plain" type='info'
-        @click="add_piece(tag)">
-        {{ tag }}
-      </el-tag>
-      <el-input v-if="inputVisible" ref="InputRef" v-model="inputValue" size="small" @keyup.enter="handleInputConfirm"
-        @blur="handleInputConfirm" />
-      <el-button v-else class="button-new-tag ml-1" size="small" plain @click="showInput">
-        + 新标签
-      </el-button>
-    </el-popover>
+    <button class="btn">
+      <i class="bi bi-plus"></i>
+    </button>
+
+    <div class="badge badge-primary" v-for="tag in dynamicTags" :key="tag" @click="add_piece(tag)">
+      {{ tag }}
+    </div>
+    <input v-if="inputVisible" ref="InputRef" v-model="inputValue" @keyup.enter="handleInputConfirm"
+      @blur="handleInputConfirm" />
+    <button v-else class="button-new-tag ml-1" size="small" plain @click="showInput">
+      + 新标签
+    </button>
   </div>
 </template>
 
-<style lang="scss">
-.add {
-  .add_btn {
-    margin: auto;
-    display: flex;
-  }
-}
-
-.el-tag {
-  margin: 4px;
-  cursor: pointer;
-}
-</style>
+<style lang="scss"></style>

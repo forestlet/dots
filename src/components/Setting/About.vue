@@ -58,8 +58,8 @@ const clicks = () => {
         cursor: pointer;
         padding: 60px;
         padding-left: 150px;
-        width: 160px;
-        height: 160px;
+        width: 360px;
+        height: 320px;
         user-select: none;
         margin: auto;
 

@@ -4,9 +4,6 @@ import vue from "@vitejs/plugin-vue";
 import electron from "vite-plugin-electron";
 import renderer from "vite-plugin-electron-renderer";
 import pkg from "./package.json";
-import AutoImport from "unplugin-auto-import/vite";
-import Components from "unplugin-vue-components/vite";
-import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 const path = require("path");
 
 rmSync("dist-electron", { recursive: true, force: true });
@@ -66,12 +63,6 @@ export default defineConfig({
       optimizeDeps: {
         include: ["fs/promises", "process"],
       },
-    }),
-    AutoImport({
-      resolvers: [ElementPlusResolver()],
-    }),
-    Components({
-      resolvers: [ElementPlusResolver()],
     }),
   ],
   server: process.env.VSCODE_DEBUG

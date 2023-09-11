@@ -23,7 +23,7 @@
         "general": {
             "language-form-item": "语言",
             "language": {
-                "cn": "中文",
+                "zh": "中文",
                 "en": "English"
             }
         }

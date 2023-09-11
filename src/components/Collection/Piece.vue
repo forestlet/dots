@@ -57,7 +57,9 @@ const delete_piece = () => {
       </div>
 
       <div class="right">
-        <el-button link @click="delete_piece"> <i class="bi bi-trash3"></i></el-button>
+        <button class="btn btn-xs btn-ghost opacity-20 hover:opacity-100" @click="delete_piece">
+          <i class="bi bi-trash3"></i>
+        </button>
       </div>
     </div>
 

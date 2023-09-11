@@ -2,58 +2,41 @@
 import About from '@/components/Setting/About.vue';
 import Appearance from '@/components/Setting/Appearance.vue';
 import General from '@/components/Setting/General.vue';
-import { ref } from 'vue';
+import { NScrollbar } from 'naive-ui'
 
-const settingVisible = ref(false)
 const openSetting = () => {
-    settingVisible.value = true
+    (document.getElementById("setting_modal") as HTMLDialogElement)!.showModal()
 }
 </script>
 
 <template>
     <div class="setting">
-        <div class="setting_btn">
-            <el-button text @click="openSetting">
-                <i class="bi bi-sliders2"></i>
-            </el-button>
-        </div>
 
-        <el-dialog v-model="settingVisible" width="80%">
-            <el-scrollbar height="calc(80vh - 40px)">
-                <About />
-                <Appearance></Appearance>
-                <General></General>
-            </el-scrollbar>
-        </el-dialog>
+        <button class="btn btn-sm btn-ghost fixed left-2 bottom-2 opacity-20 hover:opacity-100" @click="openSetting">
+            <i class="bi bi-sliders2"></i>
+        </button>
+
+        <dialog id="setting_modal" class="modal">
+            <div class="modal-box w-[80vw] min-h-[80vh] flex flex-col">
+                <n-scrollbar style="max-height: 72vh" class="pr-4">
+                    <About />
+
+                    <General></General>
+
+                    <div class="divider"></div>
+                    <Appearance></Appearance>
+                </n-scrollbar>
+            </div>
+            <form method="dialog" class="modal-backdrop">
+                <button>close</button>
+            </form>
+        </dialog>
+
     </div>
 </template>
 
 <style lang="scss">
 .setting {
     margin: auto;
-
-    .setting_btn {
-        position: fixed;
-        bottom: 8px;
-        left: 8px;
-        opacity: 0.2;
-
-        &:hover {
-            opacity: 1;
-        }
-    }
-
-    .el-dialog__header {
-        display: none;
-    }
-
-    .el-dialog__body {
-        padding: 20px;
-    }
-
-    .el-dialog {
-        margin: 10vh auto;
-        height: 80vh;
-    }
 }
 </style>

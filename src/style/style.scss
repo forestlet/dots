@@ -1,6 +1,7 @@
 :root {
   --herisson-font-family: "更纱黑体 UI SC";
 }
+
 body {
   font-family: var(--herisson-font-family);
   button,
@@ -10,4 +11,9 @@ body {
   textarea {
     font-family: var(--herisson-font-family) !important;
   }
+}
+
+.icon {
+  margin-right: 12px;
+  font-size: 1.2rem;
 }

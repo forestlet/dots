@@ -1,6 +1,6 @@
 # Hérisson
 
-🦔 Collect everyday pieces: fruit, vegetables, worms...
+🦔 Collect the dots.
 
 ## draft
 

@@ -1,25 +1,25 @@
 <template>
-    <div class="control-bar">
-        <el-button key="plain" text @click="refresh" class="control-tab">
+    <div class="control-bar flex fixed top-0 w-full z-10">
+        <button @click="refresh" class="btn btn-sm btn-ghost ml-2 mt-2 opacity-20">
             <i class="bi bi-arrow-clockwise"></i>
-        </el-button>
+        </button>
 
-        <div class="drag">
+        <div class="drag flex-1"> </div>
 
-        </div>
-        <div class="btn-groups">
-            <el-button-group>
-                <el-button key="plain" text @click="minWindow" class="control-tab">
-                    <i class="bi bi-dash-lg"></i>
-                </el-button>
-                <el-button key="plain" text @click="maxRestoreWindow" class="control-tab">
-                    <i class="bi bi-files" v-if="isWindowMax" style="transform: scaleX(1.3)"></i>
-                    <i class="bi bi-square" v-else></i>
-                </el-button>
-                <el-button key="plain" text @click="closeWindow" class="danger control-tab">
-                    <i class="bi bi-x-lg"></i>
-                </el-button>
-            </el-button-group>
+        <div class="mt-2 mr-11">
+            <button @click="minWindow" class="btn btn-sm btn-ghost mr-1">
+                <i class="bi bi-dash-lg"></i>
+            </button>
+
+            <button @click="maxRestoreWindow" class="btn btn-sm btn-ghost mr-1">
+                <i class="bi bi-files" v-if="isWindowMax" style="transform: scaleX(1.3)"></i>
+                <i class="bi bi-square" v-else></i>
+            </button>
+
+            <button @click="closeWindow"
+                class="btn btn-md btn-square rounded-md hover:btn-error btn-ghost fixed top-[-4px] right-[-4px] close-btn">
+                <i class="bi bi-x-lg"></i>
+            </button>
         </div>
     </div>
 </template>
@@ -50,16 +50,14 @@ const maxRestoreWindow = () => {
 
 <style lang="scss">
 .control-bar {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    -webkit-user-drag: auto;
-
     .drag {
         flex: 1;
         app-region: drag;
+    }
+
+    .close-btn {
+        padding-top: 8px !important;
+        padding-right: 8px !important;
     }
 }
 </style>
